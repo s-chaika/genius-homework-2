@@ -256,8 +256,8 @@ p {
 .advantages-container::before {
   position: absolute;
   width: 1440px;
-  height: 2551px;
-  top: -820px;
+  height: 1507px;
+  top: -185px;
   left: calc(50% - 720px);
   background-image: url('../images/advantages-background.png');
   background-repeat: no-repeat;
