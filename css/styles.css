@@ -131,10 +131,11 @@ p {
 
 /* Header */
 .header {
+  position: absolute;
   background-color: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(5px);
-  position: absolute;
   width: 100%;
+  z-index: 1;
 }
 .header-container {
   padding: 32px 0;
@@ -164,11 +165,15 @@ p {
 
 /* Hero section */
 .hero-section {
-  /* TODO: BACkGROUND */
+  background-image: url('../images/woman-doctor-with-patient.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
 }
+
 .hero-container {
   padding: 106px 124px;
 }
+
 .hero-title {
   color: var(--color-primary-normal);
   max-width: 530px;
@@ -224,7 +229,7 @@ p {
   text-transform: capitalize;
 }
 .about-images {
-  flex-basis: calc(43% - 28px);
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
@@ -239,10 +244,29 @@ p {
 }
 
 /* Advantages section */
+.advantages-section {
+  position: relative;
+}
+
 .advantages-container {
   padding: 0 90px;
   margin-bottom: 96px;
 }
+
+.advantages-container::before {
+  position: absolute;
+  width: 1440px;
+  height: 2551px;
+  top: -820px;
+  left: calc(50% - 720px);
+  background-image: url('../images/advantages-background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  content: '';
+  z-index: -1;
+}
+
 .advantages-list {
   display: flex;
   justify-content: space-between;
@@ -384,6 +408,7 @@ p {
 
 /* Footer */
 .footer {
+  position: relative;
   padding: 56px 0;
   background-color: var(--color-secondary-blue);
 }
@@ -450,4 +475,14 @@ p {
 .address-copyright {
   color: var(--color-secondary-lightgray);
   font-size: 13px;
+}
+
+.footer-container::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 247px;
+  height: 152px;
+  background-image: url('../images/footer-decor-bottles.png');
+  content: '';
 }
